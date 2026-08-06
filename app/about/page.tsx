@@ -37,6 +37,26 @@ const pillars = [
   },
 ];
 
+const team = [
+  {
+    name: "Casey",
+    role: "Tour Specialist / Adventure Guide",
+    quote:
+      "Casey has been an outdoor enthusiast his whole life. He has a passion for getting people outdoors and living life to the fullest.",
+  },
+  {
+    name: "Randy",
+    role: "Shop Manager / Adventure Coach",
+    quote: "Randy has always been into the fun having scene in the Lake Tahoe area.",
+  },
+  {
+    name: "Philip",
+    role: "Tour Coordinator / Adventure Guide",
+    quote:
+      "Philip is an avid adventurer. He has been in the scene for many years, and plans to be for many more to come.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -46,9 +66,21 @@ export default function AboutPage() {
           eyebrow="About Us"
           title="Tahoe Tours and Rentals"
           description={brand.description}
-          image={`${IMG}/img-014.webp`}
-          imageAlt="Group of guests watching the sunset over Lake Tahoe from a mountain overlook"
+          image={`${IMG}/about-mount-tallac.webp`}
+          imageAlt="Guides posing with their dog on a snowy Mount Tallac summit overlooking Lake Tahoe"
         />
+
+        <section className="container-px mx-auto max-w-4xl pt-16 text-center">
+          <Reveal>
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+              Our Story
+            </span>
+            <p className="mx-auto mt-4 max-w-2xl text-balance text-2xl font-semibold leading-snug sm:text-3xl">
+              &ldquo;We started with a dream to share our adventures with the world. Our
+              goal is to have you experience the area like a local.&rdquo;
+            </p>
+          </Reveal>
+        </section>
 
         <section className="container-px mx-auto max-w-6xl py-16">
           <RevealGroup className="grid gap-5 sm:grid-cols-2">
@@ -62,6 +94,37 @@ export default function AboutPage() {
                 </span>
                 <h3 className="text-lg font-semibold">{p.title}</h3>
                 <p className="text-sm text-pretty text-muted-foreground">{p.body}</p>
+              </RevealItem>
+            ))}
+          </RevealGroup>
+        </section>
+
+        <section className="container-px mx-auto max-w-6xl pb-16">
+          <Reveal className="max-w-2xl">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+              Meet The Team
+            </span>
+            <h2 className="mt-3 text-balance text-4xl font-bold sm:text-5xl">
+              The guides behind every tour
+            </h2>
+          </Reveal>
+
+          <RevealGroup className="mt-10 grid gap-6 sm:grid-cols-3">
+            {team.map((t) => (
+              <RevealItem
+                key={t.name}
+                className="flex flex-col gap-3 rounded-2xl border border-border bg-card p-6"
+              >
+                <span className="grid size-12 place-items-center rounded-full bg-primary/10 font-display text-lg font-semibold text-primary ring-1 ring-primary/15">
+                  {t.name.charAt(0)}
+                </span>
+                <h3 className="text-lg font-semibold">{t.name}</h3>
+                <span className="text-xs font-medium uppercase tracking-wide text-primary">
+                  {t.role}
+                </span>
+                <p className="mt-1 text-sm text-pretty text-muted-foreground">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
               </RevealItem>
             ))}
           </RevealGroup>

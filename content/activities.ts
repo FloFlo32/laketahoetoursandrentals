@@ -1,11 +1,25 @@
 /**
  * Every inner page from the source site (laketahoetoursandrentals.com), scraped
- * into ideas/laketahoetoursandrentals/brand.json + content.md. One entry per real
- * nav item. `path` matches the original URL path (minus the leading slash) so the
- * catch-all route at app/[...slug]/page.tsx can serve the exact same site map.
+ * into ideas/laketahoetoursandrentals/brand.json + content.md, PLUS a deeper
+ * per-page image/content scan of the live site (each tour page was fetched
+ * individually). `path` matches the original URL path (minus the leading
+ * slash) so the catch-all route at app/[...slug]/page.tsx serves the exact
+ * same site map. Every heroImage below is a distinct file — none is reused
+ * across two different pages, except emerald-bay-tour, which deliberately
+ * uses the real Emerald Bay/Eagle Falls photo (no people in frame) because
+ * it's a literal, unique match rather than a generic stand-in.
  */
 
 const IMG = "/ingested/laketahoetoursandrentals";
+
+export type Guide = {
+  name: string;
+  bio: string;
+  years?: string;
+  level?: string;
+  trail?: string;
+  described?: string;
+};
 
 export type Activity = {
   path: string;
@@ -17,6 +31,7 @@ export type Activity = {
   highlights?: string[];
   heroImage: string;
   gallery?: string[];
+  guides?: Guide[];
   note?: string;
 };
 
@@ -32,7 +47,6 @@ export const activities: Activity[] = [
     ],
     highlights: ["Paddlesport Tours"],
     heroImage: `${IMG}/img-030.webp`,
-    gallery: [`${IMG}/img-030.webp`, `${IMG}/img-033.webp`],
   },
   {
     path: "cave-rock-kayak-/-sup-tour",
@@ -57,7 +71,7 @@ export const activities: Activity[] = [
       "The only Sand Harbor tour with transportation from South Lake Tahoe. We shuttle you directly to Tahoe's most iconic beach in our bus. Paddle crystal clear waters and out to Bonsai Rock.",
     ],
     highlights: ["Kayak & Paddle board Tours at Sand Harbor"],
-    heroImage: `${IMG}/img-030.webp`,
+    heroImage: `${IMG}/img-018.webp`,
   },
   {
     path: "kayak-/-sup",
@@ -70,7 +84,7 @@ export const activities: Activity[] = [
       "\"Grab 'N Go\" Kayak & SUP rental in Lake Tahoe. Universal kayak racks included at no extra cost. Paddle where you want. Delivery also available.",
     ],
     highlights: ["Kayak & Paddle board Rentals in Lake Tahoe"],
-    heroImage: `${IMG}/img-033.webp`,
+    heroImage: `${IMG}/img-017.webp`,
   },
   {
     path: "hiking-tours-lake-tahoe",
@@ -82,8 +96,7 @@ export const activities: Activity[] = [
       "Join us on the best hiking trails in Lake Tahoe. Experience the best viewpoints and views in Tahoe.",
     ],
     highlights: ["Hiking Tours", "Tour Info", "What To Bring"],
-    heroImage: `${IMG}/img-010.webp`,
-    gallery: [`${IMG}/img-010.webp`, `${IMG}/img-009.webp`, `${IMG}/img-014.webp`],
+    heroImage: `${IMG}/img-013.webp`,
   },
   {
     path: "mountain-biking",
@@ -96,9 +109,34 @@ export const activities: Activity[] = [
       "Explore the best mountain bike trails in Lake Tahoe on our electric mountain bikes, or chose a road bike; great for cruising bike paths and accessing some of the best views and beaches on our tours.",
       "Bring your own MTB, or rent a bike separately here: Roll Tahoe or Shoreline. (For standard bikes, you can choose when booking.)",
     ],
-    highlights: ["Standard Bikes", "Mountain Bike Tours", "Mountain Bike Tours & Lessons for Beginners to Advance", "Meet Our Guides"],
+    highlights: ["Standard Bikes", "Mountain Bike Tours", "Mountain Bike Tours & Lessons for Beginners to Advance"],
     heroImage: `${IMG}/img-020.webp`,
-    gallery: [`${IMG}/img-020.webp`, `${IMG}/img-028.webp`, `${IMG}/img-021.webp`],
+    guides: [
+      {
+        name: "Casey",
+        bio: "Casey has been an outdoor enthusiast his entire life. Casey is very detail-focused when teaching others, and can accommodate all skill levels.",
+        years: "22",
+        level: "Expert",
+        trail: "Flume Trail",
+        described: "Charismatic and optimistic",
+      },
+      {
+        name: "Robyn",
+        bio: "Robyn started racing cross country, cyclocross, and downhill at a young age. She is now a national champion and earned her pro license.",
+        years: "20",
+        level: "Pro",
+        trail: "Mr. Toads Wild Ride",
+        described: "Energetic",
+      },
+      {
+        name: "Jo",
+        bio: "Jo has been a mountain bike coach for Woodward Tahoe and other camps, while working in the outdoor education and recreation field since graduating.",
+        years: "6",
+        level: "Expert",
+        trail: "Kingsbury Stinger",
+        described: "Joyful",
+      },
+    ],
   },
   {
     path: "just-the-tip",
@@ -122,7 +160,7 @@ export const activities: Activity[] = [
       "The Whole Shebang: widely considered the best mountain bike trail in Lake Tahoe, strung together for maximum scenery.",
     ],
     highlights: ["Highlights", "What To Bring"],
-    heroImage: `${IMG}/img-020.webp`,
+    heroImage: `${IMG}/img-021.webp`,
   },
   {
     path: "out-of-the-gate",
@@ -134,7 +172,7 @@ export const activities: Activity[] = [
       "Out of the Gate: learn the basics with views to last a lifetime. Built for first-time mountain bikers.",
     ],
     highlights: ["Tour Info", "What To Bring", "The Trails"],
-    heroImage: `${IMG}/img-021.webp`,
+    heroImage: `${IMG}/img-022.webp`,
   },
   {
     path: "bike-tours",
@@ -147,7 +185,6 @@ export const activities: Activity[] = [
     ],
     highlights: ["Bike Tours", "Lake Tahoe"],
     heroImage: `${IMG}/img-016.webp`,
-    gallery: [`${IMG}/img-016.webp`, `${IMG}/img-017.webp`, `${IMG}/img-023.webp`],
   },
   {
     path: "scuba-diving-tours",
@@ -160,7 +197,6 @@ export const activities: Activity[] = [
     ],
     highlights: ["Dive / Scuba Tour Info", "Dive Certifications"],
     heroImage: `${IMG}/img-029.webp`,
-    gallery: [`${IMG}/img-029.webp`, `${IMG}/img-031.webp`],
   },
   {
     path: "kayak-/fly-fishing-tours-/-classes",
@@ -184,7 +220,7 @@ export const activities: Activity[] = [
       "Learn from the legend himself, Adventure Guide Brian. Fish the best private fishing access in Lake Tahoe.",
     ],
     highlights: ["Meet Your Guide", "Will we catch fish?", "Do we need to bring anything?", "Can we keep the fish?"],
-    heroImage: `${IMG}/img-035.webp`,
+    heroImage: `${IMG}/fly-fishing-classes-photo.webp`,
   },
   {
     path: "fly-fishing-classes",
@@ -195,7 +231,7 @@ export const activities: Activity[] = [
     description: [
       "New to fly fishing? Learn casting fundamentals on the water with the same guides behind our fly fishing tours.",
     ],
-    heroImage: `${IMG}/img-035.webp`,
+    heroImage: `${IMG}/img-009.webp`,
   },
   {
     path: "disc-golf-test-1",
@@ -206,7 +242,7 @@ export const activities: Activity[] = [
     description: [
       "Experience what's known as \"the most beautiful course in America.\" Learn how to disc golf with a coach.",
     ],
-    heroImage: `${IMG}/img-009.webp`,
+    heroImage: `${IMG}/img-023.webp`,
   },
   {
     path: "sightseeing-tours0cdc8de3",
@@ -228,8 +264,7 @@ export const activities: Activity[] = [
     description: [
       "Allow us to host your event! Team building, corporate gatherings, & group events. Let's grow your team spirit!",
     ],
-    heroImage: `${IMG}/img-017.webp`,
-    gallery: [`${IMG}/img-017.webp`, `${IMG}/img-024.webp`],
+    heroImage: `${IMG}/img-024.webp`,
   },
   {
     path: "sightseeing-tours",
@@ -241,7 +276,7 @@ export const activities: Activity[] = [
       "Let us guide you to the best destinations in Lake Tahoe. Experience the best drives in Lake Tahoe.",
       "Personal driver to shuttle your group. Weddings, bachelor / bachelorette parties, & corporate events!",
     ],
-    heroImage: `${IMG}/img-030.webp`,
+    heroImage: `${IMG}/virginia-city-2.webp`,
   },
   {
     path: "lake-loop-tour",
@@ -252,7 +287,7 @@ export const activities: Activity[] = [
     description: [
       "Let us guide you to the best destinations in Lake Tahoe. Experience the best drives in Lake Tahoe, all the way around the shoreline.",
     ],
-    heroImage: `${IMG}/img-018.webp`,
+    heroImage: `${IMG}/img-032.webp`,
   },
   {
     path: "virginia-city-tour",
@@ -263,7 +298,7 @@ export const activities: Activity[] = [
     description: [
       "Let us guide you to the best destinations near Lake Tahoe. Experience the best drives, including the historic streets of Virginia City, Nevada.",
     ],
-    heroImage: `${IMG}/img-014.webp`,
+    heroImage: `${IMG}/virginia-city.webp`,
   },
   {
     path: "emerald-bay-tour",
@@ -274,8 +309,7 @@ export const activities: Activity[] = [
     description: [
       "Let us guide you to the best destinations in Lake Tahoe. Experience the best drives in Lake Tahoe, including the turquoise waters of Emerald Bay.",
     ],
-    heroImage: `${IMG}/img-030.webp`,
-    gallery: [`${IMG}/img-030.webp`, `${IMG}/img-033.webp`],
+    heroImage: `${IMG}/emerald-bay.webp`,
   },
   {
     path: "moonbikes",
@@ -286,8 +320,7 @@ export const activities: Activity[] = [
     description: [
       "Moonbiking is a fun way to experience Tahoe's backcountry for all skill sets: electric snow bike / snowmobile touring.",
     ],
-    heroImage: `${IMG}/img-028.webp`,
-    note: "Winter-season activity; on-mountain photography from this tour wasn't available to import, so the imagery above is from our summer trail rides with the same guide team.",
+    heroImage: `${IMG}/moonbike-rental.webp`,
   },
   {
     path: "snowshoe-tours-rentals",
@@ -298,8 +331,7 @@ export const activities: Activity[] = [
     description: [
       "Snowshoeing in Lake Tahoe is a must for those looking for a laid back experience in the Tahoe backcountry.",
     ],
-    heroImage: `${IMG}/img-009.webp`,
-    note: "Winter-season activity; on-mountain photography from this tour wasn't available to import, so the imagery above is from our summer trail outings with the same guide team.",
+    heroImage: `${IMG}/skibike-guide4.webp`,
   },
   {
     path: "sightseeing-tours7d5663eb",
@@ -310,7 +342,7 @@ export const activities: Activity[] = [
     description: [
       "Let us guide you to the best destinations in Lake Tahoe. Experience the best drives in Lake Tahoe.",
     ],
-    heroImage: `${IMG}/img-010.webp`,
+    heroImage: `${IMG}/img-034.webp`,
   },
   {
     path: "ski-bike-rentals-tours-lessons",
@@ -322,8 +354,7 @@ export const activities: Activity[] = [
       "SkiBiking is the newest trend. Riding a ski bike is like mountain biking with skis, a perfect alternative to skiing.",
       "Skibyk Ski Bikes are the leader in the ski bike industry.",
     ],
-    heroImage: `${IMG}/img-020.webp`,
-    note: "Winter-season activity; on-mountain photography from this tour wasn't available to import, so the imagery above is from our summer trail rides with the same guide team.",
+    heroImage: `${IMG}/skibike-casey.webp`,
   },
   {
     path: "snowboard-tours",
@@ -334,8 +365,7 @@ export const activities: Activity[] = [
     description: [
       "Experience the best skiing alternative. Imagine skateboarding with a ski, no wheels.",
     ],
-    heroImage: `${IMG}/img-021.webp`,
-    note: "Winter-season activity; on-mountain photography from this tour wasn't available to import, so the imagery above is from our summer trail rides with the same guide team.",
+    heroImage: `${IMG}/heavenly-snowboard.webp`,
   },
   {
     path: "additional-services",
@@ -347,7 +377,7 @@ export const activities: Activity[] = [
       "We offer a full wax & tune service from hot wax and base grind, to core shots. Pick-up & drop-off available.",
       "Allow us to host your event! From team building to corporate gatherings, we will help your team grow.",
     ],
-    heroImage: `${IMG}/img-016.webp`,
+    heroImage: `${IMG}/skibike-randy.webp`,
   },
 ];
 

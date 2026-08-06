@@ -93,8 +93,8 @@ export function Hero() {
           <div className="absolute bottom-6 right-6 hidden overflow-hidden rounded-2xl border-4 border-background shadow-xl sm:block">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${IMG}/img-035.webp`}
-              alt="Guide holding a trout caught on a Lake Tahoe fly fishing tour"
+              src={`${IMG}/img-031.webp`}
+              alt="Scuba diver exploring Lake Tahoe's clear alpine water"
               loading="lazy"
               decoding="async"
               className="size-32 object-cover"

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { CheckCircle2, Info } from "lucide-react";
+import { CheckCircle2, Info, Award, Mountain, Route } from "lucide-react";
 import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
 import { PageHero } from "@/components/sections/page-hero";
@@ -89,6 +89,52 @@ export default async function ActivityPage({
             </RevealGroup>
           )}
         </section>
+
+        {activity.guides && activity.guides.length > 0 && (
+          <section className="container-px mx-auto max-w-6xl pb-16">
+            <Reveal className="max-w-2xl">
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+                Meet Our Guides
+              </span>
+              <h2 className="mt-3 text-balance text-3xl font-bold sm:text-4xl">
+                Who you&apos;ll ride with
+              </h2>
+            </Reveal>
+            <RevealGroup className="mt-8 grid gap-5 sm:grid-cols-3">
+              {activity.guides.map((g) => (
+                <RevealItem
+                  key={g.name}
+                  className="flex flex-col gap-3 rounded-2xl border border-border bg-card p-6"
+                >
+                  <h3 className="text-lg font-semibold">Meet {g.name}</h3>
+                  <p className="text-sm text-pretty text-muted-foreground">{g.bio}</p>
+                  <div className="mt-2 grid grid-cols-2 gap-2 text-xs text-muted-foreground">
+                    {g.years && (
+                      <span className="flex items-center gap-1.5">
+                        <Award className="size-3.5 text-primary" /> {g.years} years riding
+                      </span>
+                    )}
+                    {g.level && (
+                      <span className="flex items-center gap-1.5">
+                        <Mountain className="size-3.5 text-primary" /> {g.level}
+                      </span>
+                    )}
+                    {g.trail && (
+                      <span className="col-span-2 flex items-center gap-1.5">
+                        <Route className="size-3.5 text-primary" /> Favorite: {g.trail}
+                      </span>
+                    )}
+                  </div>
+                  {g.described && (
+                    <span className="mt-1 text-xs font-medium uppercase tracking-wide text-primary">
+                      Described as: {g.described}
+                    </span>
+                  )}
+                </RevealItem>
+              ))}
+            </RevealGroup>
+          </section>
+        )}
 
         {activity.gallery && activity.gallery.length > 1 && (
           <section className="container-px mx-auto max-w-6xl pb-16">
