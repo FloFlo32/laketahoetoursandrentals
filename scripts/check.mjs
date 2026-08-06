@@ -10,7 +10,7 @@
  */
 import { readFile, readdir, stat } from "node:fs/promises";
 import { existsSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -36,7 +36,7 @@ const slug = (s) => s.toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/
 // ── load inputs ───────────────────────────────────────────────────────────────
 let brand = null;
 try {
-  ({ brand } = await import(join(root, "brand.config.ts")));
+  ({ brand } = await import(pathToFileURL(join(root, "brand.config.ts"))));
 } catch {}
 const pkg = JSON.parse((await read("package.json")) || "{}");
 const envText = (await read(".env")) || "";

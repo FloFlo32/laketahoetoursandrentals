@@ -17,13 +17,13 @@
  */
 import { readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 if (existsSync(join(root, ".env"))) process.loadEnvFile(join(root, ".env"));
 let brand = null;
-try { ({ brand } = await import(join(root, "brand.config.ts"))); } catch {}
+try { ({ brand } = await import(pathToFileURL(join(root, "brand.config.ts")))); } catch {}
 
 const C = {
   dim: (s) => `\x1b[2m${s}\x1b[0m`,

@@ -20,32 +20,32 @@
 
 export const brand = {
   /** Product / company name. Shows in the nav, hero, footer, <title>, OG tags. */
-  name: "Aurora",
+  name: "Lake Tahoe Tours Rentals & Outdoor Adventures California Nevada",
 
   /** One-line value prop. Used in the hero sub-headline + meta description. */
-  tagline: "The starter pack for shipping websites that don't look AI-built.",
+  tagline: "Lake Tahoe Tours Rentals & Outdoor Adventures California Nevada",
 
   /** Longer description for SEO / Open Graph. ~150 chars is ideal. */
   description:
-    "A production-grade Next.js + Tailwind + shadcn starter with a real design system, motion, and one-command deploy to Vercel.",
+    "Tahoe Tours And Rentals offers kayaking, biking, hiking, fishing, and more, pairing you with local guides for real adventures on both the California and Nevada sides of the lake.",
 
   /** Primary domain WITHOUT protocol. `/build` sets this to <project>.getyetti.com. */
-  domain: "aurora.getyetti.com",
+  domain: "laketahoetoursandrentals.getyetti.com",
 
   /** Theme — drives the whole color system. Run `npm run brand` after editing. */
   theme: {
     /** Brand hue in OKLCH degrees (0–360). This single number re-skins the site. */
-    hue: 265,
+    hue: 168,
     /** Corner style. "sharp" = modern/editorial, "rounded" = friendly, "pill" = playful. */
     corners: "rounded" as "sharp" | "rounded" | "pill",
-    /** Default color scheme on first paint. */
-    defaultScheme: "dark" as "light" | "dark",
+    /** Default color scheme on first paint. This site is light-only, always. */
+    defaultScheme: "light" as "light" | "dark",
   },
 
   /** Fonts. Any Google Font name works — edit, then run `npm run brand`. */
   fonts: {
     /** Big headlines. Pick something with PERSONALITY — this is what breaks the AI look. */
-    display: "Space Grotesk",
+    display: "Fraunces",
     /** Body / UI text. Keep it clean and readable. */
     sans: "Geist",
     /** Code / labels / kbd. */
@@ -56,7 +56,8 @@ export const brand = {
   social: {
     github: "your-org/your-repo",
     x: "yourhandle",
-    email: "hello@aurora.example.com",
+    instagram: "https://www.instagram.com/skibyk_skibikes/?hl=en",
+    email: "info@tahoetoursandrentals.com",
   },
 
   /**
@@ -68,8 +69,8 @@ export const brand = {
   contact: {
     whatsapp: "",
     phone: "",
-    address: "",
-    mapQuery: "",
+    address: "152 Highway 50, Stateline, Nevada, 89449, US",
+    mapQuery: "152 Highway 50, Stateline, Nevada, 89449, US",
   },
 } as const;
 

@@ -1,0 +1,379 @@
+{
+  "source": "https://www.laketahoetoursandrentals.com/",
+  "ingestedFromHost": "laketahoetoursandrentals.com",
+  "pagesCrawled": 14,
+  "name": "Lake Tahoe Tours Rentals & Outdoor Adventures California Nevada",
+  "tagline": "Lake Tahoe Tours Rentals & Outdoor Adventures California Nevada",
+  "description": "Tahoe Tours And Rentals offers kayaking, biking, hiking, fishing, and more, pairing you with local guides for real adventures on both the California and Nevada sides of the lake.",
+  "domain": "laketahoetoursandrentals.com",
+  "brandColor": {
+    "hex": "#02ffc4",
+    "src": "css-frequency",
+    "oklchHue": 168
+  },
+  "theme": {
+    "hue": 168
+  },
+  "fonts": [],
+  "logo": null,
+  "logoNote": "Logo not auto-found — grab the navbar logo manually",
+  "favicon": "https://irp.cdn-website.com/29bfd8d6/dms3rep/multi/TTR_Logo_2026-e45d2cc7.PNG",
+  "images": [
+    "/ingested/laketahoetoursandrentals/img-001.webp",
+    "/ingested/laketahoetoursandrentals/img-002.webp",
+    "/ingested/laketahoetoursandrentals/img-004.webp",
+    "/ingested/laketahoetoursandrentals/img-005.webp",
+    "/ingested/laketahoetoursandrentals/img-006.webp",
+    "/ingested/laketahoetoursandrentals/img-007.webp",
+    "/ingested/laketahoetoursandrentals/img-008.webp",
+    "/ingested/laketahoetoursandrentals/img-009.webp",
+    "/ingested/laketahoetoursandrentals/img-010.webp",
+    "/ingested/laketahoetoursandrentals/img-011.webp",
+    "/ingested/laketahoetoursandrentals/img-012.webp",
+    "/ingested/laketahoetoursandrentals/img-013.webp",
+    "/ingested/laketahoetoursandrentals/img-014.webp",
+    "/ingested/laketahoetoursandrentals/img-015.webp",
+    "/ingested/laketahoetoursandrentals/img-016.webp",
+    "/ingested/laketahoetoursandrentals/img-017.webp",
+    "/ingested/laketahoetoursandrentals/img-018.webp",
+    "/ingested/laketahoetoursandrentals/img-020.webp",
+    "/ingested/laketahoetoursandrentals/img-021.webp",
+    "/ingested/laketahoetoursandrentals/img-022.webp",
+    "/ingested/laketahoetoursandrentals/img-023.webp",
+    "/ingested/laketahoetoursandrentals/img-024.webp",
+    "/ingested/laketahoetoursandrentals/img-025.webp",
+    "/ingested/laketahoetoursandrentals/img-026.webp",
+    "/ingested/laketahoetoursandrentals/img-027.webp",
+    "/ingested/laketahoetoursandrentals/img-028.webp",
+    "/ingested/laketahoetoursandrentals/img-029.webp",
+    "/ingested/laketahoetoursandrentals/img-030.webp",
+    "/ingested/laketahoetoursandrentals/img-031.webp",
+    "/ingested/laketahoetoursandrentals/img-032.webp",
+    "/ingested/laketahoetoursandrentals/img-033.webp",
+    "/ingested/laketahoetoursandrentals/img-034.webp",
+    "/ingested/laketahoetoursandrentals/img-035.webp"
+  ],
+  "imageCount": 33,
+  "social": {
+    "instagram": "https://www.instagram.com/skibyk_skibikes/?hl=en",
+    "email": "info@tahoetoursandrentals.com"
+  },
+  "whatsapp": null,
+  "phone": null,
+  "location": {
+    "address": "152 Highway 50, Stateline, Nevada, 89449, US",
+    "lat": "38.9687061",
+    "lng": "-119.9360465",
+    "mapQuery": "152 Highway 50, Stateline, Nevada, 89449, US"
+  },
+  "sectionOrder": [
+    "Welcome To",
+    "Tahoe Tours And Rentals",
+    "Lake Tahoe's Best Summer Activities",
+    "Lake Tahoe Summer Activites:",
+    "Lake Tahoe Winter Activites:",
+    "Top Rated Reviews",
+    "Proud Partners:",
+    "Sign Me Up :)",
+    "Enjoy Tahoe On Your Own Personal Watercraft"
+  ],
+  "navItems": [
+    {
+      "text": "Kayak / SUP Tours",
+      "url": "https://www.laketahoetoursandrentals.com/kayak-/-sup-tours",
+      "path": "/kayak-/-sup-tours"
+    },
+    {
+      "text": "Cave Rock Kayak / SUP Tour",
+      "url": "https://www.laketahoetoursandrentals.com/cave-rock-kayak-/-sup-tour",
+      "path": "/cave-rock-kayak-/-sup-tour"
+    },
+    {
+      "text": "Sand Harbor Kayak / SUP Tour",
+      "url": "https://www.laketahoetoursandrentals.com/sand-harbor-kayak-sup-tour",
+      "path": "/sand-harbor-kayak-sup-tour"
+    },
+    {
+      "text": "Kayak / SUP Rentals",
+      "url": "https://www.laketahoetoursandrentals.com/kayak-/-sup",
+      "path": "/kayak-/-sup"
+    },
+    {
+      "text": "Hiking",
+      "url": "https://www.laketahoetoursandrentals.com/hiking-tours-lake-tahoe",
+      "path": "/hiking-tours-lake-tahoe"
+    },
+    {
+      "text": "Biking",
+      "url": "https://www.laketahoetoursandrentals.com/mountain-biking",
+      "path": "/mountain-biking"
+    },
+    {
+      "text": "Downhill Thrill (MTB)",
+      "url": "https://www.laketahoetoursandrentals.com/just-the-tip",
+      "path": "/just-the-tip"
+    },
+    {
+      "text": "The Whole Shebang (MTB)",
+      "url": "https://www.laketahoetoursandrentals.com/the-whole-shebang",
+      "path": "/the-whole-shebang"
+    },
+    {
+      "text": "Out of the Gate (MTB)",
+      "url": "https://www.laketahoetoursandrentals.com/out-of-the-gate",
+      "path": "/out-of-the-gate"
+    },
+    {
+      "text": "Hike 'N Bike",
+      "url": "https://www.laketahoetoursandrentals.com/bike-tours",
+      "path": "/bike-tours"
+    },
+    {
+      "text": "Scuba Diving Tours",
+      "url": "https://www.laketahoetoursandrentals.com/scuba-diving-tours",
+      "path": "/scuba-diving-tours"
+    },
+    {
+      "text": "Fly Fishing",
+      "url": "https://www.laketahoetoursandrentals.com/kayak-/fly-fishing-tours-/-classes",
+      "path": "/kayak-/fly-fishing-tours-/-classes"
+    },
+    {
+      "text": "Fly Fishing Tours",
+      "url": "https://www.laketahoetoursandrentals.com/fly-fishing-tours",
+      "path": "/fly-fishing-tours"
+    },
+    {
+      "text": "Fly Fishing Classes",
+      "url": "https://www.laketahoetoursandrentals.com/fly-fishing-classes",
+      "path": "/fly-fishing-classes"
+    },
+    {
+      "text": "Disc Golf",
+      "url": "https://www.laketahoetoursandrentals.com/disc-golf-test-1",
+      "path": "/disc-golf-test-1"
+    },
+    {
+      "text": "Sightseeing Tours",
+      "url": "https://www.laketahoetoursandrentals.com/sightseeing-tours0cdc8de3",
+      "path": "/sightseeing-tours0cdc8de3"
+    },
+    {
+      "text": "Team Building Events",
+      "url": "https://www.laketahoetoursandrentals.com/team-building-activities",
+      "path": "/team-building-activities"
+    },
+    {
+      "text": "Sightseeing Tours",
+      "url": "https://www.laketahoetoursandrentals.com/sightseeing-tours",
+      "path": "/sightseeing-tours"
+    },
+    {
+      "text": "Lake Loop Tour",
+      "url": "https://www.laketahoetoursandrentals.com/lake-loop-tour",
+      "path": "/lake-loop-tour"
+    },
+    {
+      "text": "Virginia City Tour",
+      "url": "https://www.laketahoetoursandrentals.com/virginia-city-tour",
+      "path": "/virginia-city-tour"
+    },
+    {
+      "text": "Emerald Bay Tour",
+      "url": "https://www.laketahoetoursandrentals.com/emerald-bay-tour",
+      "path": "/emerald-bay-tour"
+    },
+    {
+      "text": "Electric Snow Bike / Snowmobile",
+      "url": "https://www.laketahoetoursandrentals.com/moonbikes",
+      "path": "/moonbikes"
+    },
+    {
+      "text": "Snowshoes",
+      "url": "https://www.laketahoetoursandrentals.com/snowshoe-tours-rentals",
+      "path": "/snowshoe-tours-rentals"
+    },
+    {
+      "text": "Sightseeing Tours",
+      "url": "https://www.laketahoetoursandrentals.com/sightseeing-tours7d5663eb",
+      "path": "/sightseeing-tours7d5663eb"
+    },
+    {
+      "text": "Ski Bikes",
+      "url": "https://www.laketahoetoursandrentals.com/ski-bike-rentals-tours-lessons",
+      "path": "/ski-bike-rentals-tours-lessons"
+    },
+    {
+      "text": "Ski & Board Mountain Tours",
+      "url": "https://www.laketahoetoursandrentals.com/snowboard-tours",
+      "path": "/snowboard-tours"
+    },
+    {
+      "text": "Additional Services",
+      "url": "https://www.laketahoetoursandrentals.com/additional-services",
+      "path": "/additional-services"
+    },
+    {
+      "text": "Location",
+      "url": "https://www.laketahoetoursandrentals.com/location",
+      "path": "/location"
+    },
+    {
+      "text": "Contact",
+      "url": "https://www.laketahoetoursandrentals.com/contact",
+      "path": "/contact"
+    },
+    {
+      "text": "About",
+      "url": "https://www.laketahoetoursandrentals.com/about",
+      "path": "/about"
+    },
+    {
+      "text": "Blog",
+      "url": "http://www.laketahoetoursandrentals.com/blog",
+      "path": "/blog"
+    },
+    {
+      "text": "Our Policies",
+      "url": "https://www.laketahoetoursandrentals.com/our-policies",
+      "path": "/our-policies"
+    }
+  ],
+  "footerItems": [],
+  "innerPages": [
+    {
+      "path": "/kayak-/-sup-tours",
+      "title": "Lake Tahoe Kayak Tours & Paddle Board Tours",
+      "sections": [
+        "Paddlesport Tours",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/cave-rock-kayak-/-sup-tour",
+      "title": "Cave Rock Kayak Tour & Paddle Board Adventure Lake Tahoe",
+      "sections": [
+        "Kayak & Paddle Board Tours at Cave Rock (UNAVAILABLE 2026)",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/sand-harbor-kayak-sup-tour",
+      "title": "Sand Harbor Kayak Tour & Paddle Board Adventure Lake Tahoe",
+      "sections": [
+        "Kayak & Paddle board Tours at Sand Harbor",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/kayak-/-sup",
+      "title": "Lake Tahoe Kayak Rentals & Paddle Board Rentals",
+      "sections": [
+        "Kayak & Paddle board Rentals in Lake Tahoe",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/hiking-tours-lake-tahoe",
+      "title": "Lake Tahoe Guided Hiking Tours & Scenic Trails",
+      "sections": [
+        "Hiking Tours",
+        "Lake Tahoe",
+        "Tour Info:",
+        "What To Bring:",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/mountain-biking",
+      "title": "Lake Tahoe Mountain Bike Tours & Bike Rentals",
+      "sections": [
+        "Mountain Biking & Standard Bikes",
+        "Explore the best mountain bike trails in Lake Tahoe on our electric mountain bikes, or chose a road bike; great for cruising bike paths and accessing some of the best views and beaches on our tours.",
+        "Standard Bikes:",
+        "Mountain Bike Tours:",
+        "Bring your own MTB, or rent a bike separately here: Roll Tahoe or Shoreline",
+        "(For standard bikes, you can choose when booking)",
+        "Mountain Bike Tours & Lessons",
+        "for Beginners to Advance",
+        "What To Bring:",
+        "Meet Our Guides!",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/just-the-tip",
+      "title": "Mountain Bike Tours | Lake Tahoe Tours & Rentals",
+      "sections": [
+        "Downhill Thrill",
+        "The best downhill mountain bike trail",
+        "(advance - intermediate)",
+        "Highlights:",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/the-whole-shebang",
+      "title": "Most Scenic Mountain Bike Tours | South Lake Tahoe",
+      "sections": [
+        "The Whole Shebang",
+        "\"The Best Mountain Bike Trail in Lake Tahoe\"",
+        "Highlights:",
+        "What To Bring:",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/out-of-the-gate",
+      "title": "Beginner Mountain Bike Tours | South Lake Tahoe",
+      "sections": [
+        "Out of the Gate",
+        "Learn the basics with views to last a lifetime.",
+        "Tour Info:",
+        "What To Bring:",
+        "The Trails:",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/bike-tours",
+      "title": "Tahoe Guided Bike Tours & Electric Bike Tours",
+      "sections": [
+        "Bike Tours",
+        "Lake Tahoe",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/scuba-diving-tours",
+      "title": "Lake Tahoe Scuba Diving Tours & Underwater Adventures",
+      "sections": [
+        "Scuba Diving in Lake Tahoe",
+        "Dive/Scuba Tour Info",
+        "Dive Certifications",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/kayak-/fly-fishing-tours-/-classes",
+      "title": "Lake Tahoe Fly Fishing Guides & Casting Lessons",
+      "sections": [
+        "Fly Fishing Lake Tahoe",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    },
+    {
+      "path": "/fly-fishing-tours",
+      "title": "Lake Tahoe Guided Fly Fishing Trips | Fishing Tours in South Lake Tahoe.",
+      "sections": [
+        "Fly Fishing Tours",
+        "Meet Your Guide:",
+        "FAQs",
+        "Will we catch fish?",
+        "Do we need to bring anything?",
+        "Can we keep the fish?",
+        "Enjoy Tahoe On Your Own Personal Watercraft"
+      ]
+    }
+  ]
+}

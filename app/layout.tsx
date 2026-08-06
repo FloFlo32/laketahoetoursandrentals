@@ -11,8 +11,8 @@ const siteUrl = `https://${brand.domain}`;
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${brand.name} — ${brand.tagline}`,
-    template: `%s · ${brand.name}`,
+    default: brand.name,
+    template: `%s · Tahoe Tours and Rentals`,
   },
   description: brand.description,
   applicationName: brand.name,
