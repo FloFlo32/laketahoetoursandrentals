@@ -410,7 +410,7 @@ export const infoPages = [
 
 export const partners = [
   { name: "TripAdvisor Certificate of Excellence", src: `${IMG}/img-001.webp` },
-  { name: "SkiByk", src: `${IMG}/img-002.webp` },
-  { name: "American SkiBike Association", src: `${IMG}/img-004.webp` },
+  { name: "SkiByk", src: `${IMG}/img-004.webp` },
+  { name: "American SkiBike Association", src: `${IMG}/img-005.webp` },
   { name: "Golden Gate Rides", src: `${IMG}/img-006.webp` },
 ];
