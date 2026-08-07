@@ -65,8 +65,8 @@ export default async function ActivityPage({
         />
 
         <section className="container-px mx-auto max-w-6xl py-16">
-          <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:items-start">
-            <div>
+          <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr]">
+            <div className="flex h-full flex-col justify-center">
               <Reveal className="relative pl-6">
                 <span
                   className={cn("absolute inset-y-1 left-0 w-1 rounded-full", colors.solid)}
