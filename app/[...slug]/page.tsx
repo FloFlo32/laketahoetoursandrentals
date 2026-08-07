@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CheckCircle2, Info, Award, Mountain, Route } from "lucide-react";
+import { CheckCircle2, Info, Award, Mountain, Route, ArrowRight, MapPin } from "lucide-react";
 import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
 import { PageHero } from "@/components/sections/page-hero";
 import { WatercraftCta } from "@/components/sections/watercraft-cta";
+import { Button } from "@/components/ui/button";
 import { Gallery } from "@/components/magic/gallery";
 import { ImageCard } from "@/components/magic/image-card";
 import { AutoSlider } from "@/components/magic/auto-slider";
@@ -62,35 +64,60 @@ export default async function ActivityPage({
           cta={{ label: "Check Availability", href: "/contact" }}
         />
 
-        <section className="container-px mx-auto max-w-4xl py-16">
-          <Reveal className="space-y-5 text-pretty text-lg leading-relaxed text-muted-foreground">
-            {activity.description.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </Reveal>
+        <section className="container-px mx-auto max-w-6xl py-16">
+          <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr] lg:items-start">
+            <div>
+              <Reveal className="relative pl-6">
+                <span
+                  className={cn("absolute inset-y-1 left-0 w-1 rounded-full", colors.solid)}
+                  aria-hidden
+                />
+                <div className="space-y-5 text-pretty text-lg leading-relaxed text-muted-foreground">
+                  {activity.description.map((p, i) => (
+                    <p key={i}>{p}</p>
+                  ))}
+                </div>
+              </Reveal>
 
-          {activity.note && (
-            <Reveal delay={0.08}>
-              <div className={cn("mt-8 flex items-start gap-3 rounded-2xl border p-5", colors.border, colors.bg)}>
-                <Info className={cn("mt-0.5 size-5 shrink-0", colors.text)} />
-                <p className="text-sm text-muted-foreground">{activity.note}</p>
+              {activity.note && (
+                <Reveal delay={0.08}>
+                  <div className={cn("mt-8 flex items-start gap-3 rounded-2xl border p-5", colors.border, colors.bg)}>
+                    <Info className={cn("mt-0.5 size-5 shrink-0", colors.text)} />
+                    <p className="text-sm text-muted-foreground">{activity.note}</p>
+                  </div>
+                </Reveal>
+              )}
+            </div>
+
+            <Reveal delay={0.1}>
+              <div className={cn("rounded-2xl border p-6", colors.border, colors.bg)}>
+                <span className={cn("inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em]", colors.text)}>
+                  <span className={cn("size-2 rounded-full", colors.solid)} aria-hidden />
+                  {categoryLabels[activity.category]}
+                </span>
+                <h3 className="mt-3 text-lg font-semibold">Quick Facts</h3>
+
+                <ul className="mt-4 flex flex-col gap-3">
+                  {activity.highlights?.map((h) => (
+                    <li key={h} className="flex items-start gap-2.5 text-sm">
+                      <CheckCircle2 className={cn("mt-0.5 size-4 shrink-0", colors.text)} />
+                      <span className="font-medium text-foreground/90">{h}</span>
+                    </li>
+                  ))}
+                  <li className="flex items-start gap-2.5 text-sm">
+                    <MapPin className={cn("mt-0.5 size-4 shrink-0", colors.text)} />
+                    <span className="font-medium text-foreground/90">Stateline, Nevada · South Lake Tahoe</span>
+                  </li>
+                </ul>
+
+                <Button asChild size="lg" className="mt-6 w-full">
+                  <Link href="/contact">
+                    Check Availability <ArrowRight className="size-4" />
+                  </Link>
+                </Button>
               </div>
             </Reveal>
-          )}
-
-          {activity.highlights && activity.highlights.length > 0 && (
-            <RevealGroup className="mt-8 grid gap-3 sm:grid-cols-2">
-              {activity.highlights.map((h) => (
-                <RevealItem
-                  key={h}
-                  className="flex items-start gap-2.5 rounded-xl border border-border bg-card p-4"
-                >
-                  <CheckCircle2 className={cn("mt-0.5 size-4 shrink-0", colors.text)} />
-                  <span className="text-sm font-medium">{h}</span>
-                </RevealItem>
-              ))}
-            </RevealGroup>
-          )}
+          </div>
         </section>
 
         {activity.guides && activity.guides.length > 0 && (
