@@ -54,7 +54,7 @@ export default async function ActivityPage({
       <main className="flex-1">
         <PageHero
           eyebrow={categoryLabels[activity.category]}
-          eyebrowClassName={colors.badge}
+          dotClassName={colors.solid}
           title={activity.title}
           description={activity.blurb}
           image={activity.heroImage}
