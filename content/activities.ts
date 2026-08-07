@@ -58,7 +58,7 @@ export const activities: Activity[] = [
       "Glide through Tahoe's crystal-clear waters while uncovering the fascinating history and stunning beauty of the legendary Cave Rock.",
     ],
     highlights: ["Kayak & Paddle Board Tours at Cave Rock"],
-    heroImage: `${IMG}/img-033.webp`,
+    heroImage: `${IMG}/img-034.webp`,
     note: "Unavailable for the 2026 season.",
   },
   {
@@ -342,7 +342,7 @@ export const activities: Activity[] = [
     description: [
       "Let us guide you to the best destinations in Lake Tahoe. Experience the best drives in Lake Tahoe.",
     ],
-    heroImage: `${IMG}/img-034.webp`,
+    heroImage: `${IMG}/img-033.webp`,
   },
   {
     path: "ski-bike-rentals-tours-lessons",
