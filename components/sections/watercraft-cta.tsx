@@ -25,12 +25,12 @@ export function WatercraftCta() {
         <div className="grid overflow-hidden rounded-3xl border border-border bg-card md:grid-cols-2">
           <div className="relative min-h-[18rem] md:min-h-[26rem]">
             <Image
-              src={`${IMG}/img-018.webp`}
-              alt="Guest with a rental bike overlooking Lake Tahoe"
+              src={`${IMG}/img-030.webp`}
+              alt="Guest standing on a rock in Lake Tahoe's turquoise water"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={75}
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
           <div className="flex min-h-[18rem] flex-col justify-center p-8 md:min-h-[26rem] sm:p-10">

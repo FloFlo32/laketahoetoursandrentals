@@ -26,7 +26,7 @@ export function PageHero({
   return (
     <section className="container-px mx-auto max-w-7xl pt-8 sm:pt-12">
       <div className="relative overflow-hidden rounded-3xl border border-border">
-        <div className="relative aspect-[16/9] sm:aspect-[16/7]">
+        <div className="relative aspect-[4/3] sm:aspect-[16/10]">
           <Image
             src={image}
             alt={imageAlt}
@@ -34,7 +34,7 @@ export function PageHero({
             priority
             sizes="(max-width: 768px) 100vw, 1200px"
             quality={75}
-            className="object-cover"
+            className="object-cover object-top"
           />
         </div>
       </div>

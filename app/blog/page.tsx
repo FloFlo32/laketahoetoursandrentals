@@ -51,7 +51,7 @@ export default function BlogPage() {
                     alt={t.navLabel}
                     loading="lazy"
                     decoding="async"
-                    className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    className="aspect-[5/4] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
                   />
                   <div className="p-5">
                     <h3 className="text-lg font-semibold">{t.navLabel}</h3>

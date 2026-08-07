@@ -88,7 +88,7 @@ export function Hero() {
             priority
             sizes="(max-width: 1024px) 100vw, 55vw"
             quality={80}
-            className="object-cover"
+            className="object-cover object-top"
           />
           <div className="absolute bottom-6 right-6 hidden overflow-hidden rounded-2xl border-4 border-background shadow-xl sm:block">
             {/* eslint-disable-next-line @next/next/no-img-element */}
