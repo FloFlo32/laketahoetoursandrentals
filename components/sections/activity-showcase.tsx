@@ -2,7 +2,7 @@ import { Reveal } from "@/components/magic/reveal";
 import { ImageCard } from "@/components/magic/image-card";
 import { AutoSlider } from "@/components/magic/auto-slider";
 import type { Activity } from "@/content/activities";
-import { categoryLabels } from "@/content/activities";
+import { categoryLabels, categoryColors } from "@/content/activities";
 
 export function ActivityShowcase({
   id,
@@ -36,6 +36,7 @@ export function ActivityShowcase({
               src={item.heroImage}
               alt={item.navLabel}
               eyebrow={categoryLabels[item.category]}
+              eyebrowClassName={categoryColors[item.category].text}
               title={item.navLabel}
               description={item.blurb}
             />

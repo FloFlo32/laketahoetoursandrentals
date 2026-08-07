@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 };
 
 const cards = [
-  { icon: Mail, label: "Email", value: brand.social.email, href: `mailto:${brand.social.email}` },
-  { icon: MapPin, label: "Visit", value: brand.contact.address, href: "/location" },
-  { icon: InstagramIcon, label: "Instagram", value: "@skibyk_skibikes", href: brand.social.instagram },
+  { icon: Mail, label: "Email", value: brand.social.email, href: `mailto:${brand.social.email}`, color: "text-blue-600 bg-blue-500/10 ring-blue-500/15" },
+  { icon: MapPin, label: "Visit", value: brand.contact.address, href: "/location", color: "text-emerald-600 bg-emerald-500/10 ring-emerald-500/15" },
+  { icon: InstagramIcon, label: "Instagram", value: "@skibyk_skibikes", href: brand.social.instagram, color: "text-amber-600 bg-amber-500/10 ring-amber-500/15" },
 ];
 
 export default function ContactPage() {
@@ -45,7 +45,7 @@ export default function ContactPage() {
                   rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   className="flex items-start gap-3 rounded-2xl border border-border bg-card p-5 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5"
                 >
-                  <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/15">
+                  <span className={`grid size-10 shrink-0 place-items-center rounded-lg ring-1 ${c.color}`}>
                     <c.icon className="size-5" />
                   </span>
                   <span>

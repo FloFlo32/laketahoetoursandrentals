@@ -11,7 +11,13 @@ export function Hero() {
     <section className="relative overflow-hidden">
       <div className="grid lg:grid-cols-[1fr_1.15fr]">
         {/* Bold color-blocked panel — the dominant-color moment, not a photo-scrim */}
-        <div className="relative flex flex-col justify-center overflow-hidden bg-primary px-6 py-20 text-primary-foreground sm:px-12 lg:px-16 lg:py-0">
+        <div
+          className="relative flex flex-col justify-center overflow-hidden px-6 py-20 text-primary-foreground sm:px-12 lg:px-16 lg:py-0"
+          style={{
+            backgroundImage:
+              "linear-gradient(155deg, var(--color-primary) 0%, color-mix(in oklch, var(--color-primary) 55%, var(--color-aurora-2)) 100%)",
+          }}
+        >
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 opacity-[0.07] mix-blend-overlay"

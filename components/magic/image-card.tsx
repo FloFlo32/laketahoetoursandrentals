@@ -20,6 +20,7 @@ export function ImageCard({
   description,
   href,
   eyebrow,
+  eyebrowClassName,
   className,
   ratio = "aspect-[5/4]",
 }: {
@@ -29,6 +30,7 @@ export function ImageCard({
   description?: string;
   href?: string;
   eyebrow?: string;
+  eyebrowClassName?: string;
   className?: string;
   ratio?: string;
 }) {
@@ -46,7 +48,7 @@ export function ImageCard({
       </div>
       <div className="flex flex-1 flex-col gap-2 p-5">
         {eyebrow && (
-          <span className="text-xs font-medium uppercase tracking-[0.18em] text-primary">
+          <span className={cn("text-xs font-medium uppercase tracking-[0.18em] text-primary", eyebrowClassName)}>
             {eyebrow}
           </span>
         )}

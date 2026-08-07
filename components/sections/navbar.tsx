@@ -7,18 +7,20 @@ import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { brand } from "@/brand.config";
 import { Button } from "@/components/ui/button";
-import { navGroups, infoPages } from "@/content/activities";
+import { navGroups, infoPages, categoryColors } from "@/content/activities";
 import { cn } from "@/lib/utils";
 
 const menus = [
   ...navGroups.map((g) => ({
     key: g.category,
     label: g.label,
+    dot: categoryColors[g.category].solid,
     items: g.items.map((i) => ({ href: `/${i.path}`, label: i.navLabel })),
   })),
   {
     key: "plan",
     label: "Plan Your Visit",
+    dot: null as string | null,
     items: infoPages.map((p) => ({ href: p.href, label: p.label })),
   },
 ];
@@ -81,6 +83,7 @@ export function Navbar() {
                 )}
                 aria-expanded={openMenu === menu.key}
               >
+                {menu.dot && <span className={cn("size-1.5 rounded-full", menu.dot)} aria-hidden />}
                 {menu.label}
                 <ChevronDown
                   className={cn(
@@ -129,7 +132,7 @@ export function Navbar() {
         <div className="max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-border/60 bg-background lg:hidden">
           <div className="container-px mx-auto max-w-7xl divide-y divide-border/60 py-2">
             {menus.map((menu) => (
-              <MobileGroup key={menu.key} label={menu.label} items={menu.items} />
+              <MobileGroup key={menu.key} label={menu.label} dot={menu.dot} items={menu.items} />
             ))}
             <div className="py-4">
               <Button asChild className="w-full">
@@ -145,9 +148,11 @@ export function Navbar() {
 
 function MobileGroup({
   label,
+  dot,
   items,
 }: {
   label: string;
+  dot?: string | null;
   items: { href: string; label: string }[];
 }) {
   const [open, setOpen] = React.useState(false);
@@ -159,7 +164,10 @@ function MobileGroup({
         className="flex w-full cursor-pointer items-center justify-between rounded-md px-3 py-2.5 text-sm font-semibold"
         aria-expanded={open}
       >
-        {label}
+        <span className="flex items-center gap-2">
+          {dot && <span className={cn("size-1.5 rounded-full", dot)} aria-hidden />}
+          {label}
+        </span>
         <ChevronDown className={cn("size-4 transition-transform", open && "rotate-180")} />
       </button>
       {open && (

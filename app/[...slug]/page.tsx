@@ -9,7 +9,8 @@ import { Gallery } from "@/components/magic/gallery";
 import { ImageCard } from "@/components/magic/image-card";
 import { AutoSlider } from "@/components/magic/auto-slider";
 import { Reveal, RevealGroup, RevealItem } from "@/components/magic/reveal";
-import { activities, activityByPath, categoryLabels } from "@/content/activities";
+import { activities, activityByPath, categoryLabels, categoryColors } from "@/content/activities";
+import { cn } from "@/lib/utils";
 
 export function generateStaticParams() {
   return activities.map((a) => ({ slug: a.path.split("/") }));
@@ -45,6 +46,7 @@ export default async function ActivityPage({
   const related = activities
     .filter((a) => a.category === activity.category && a.path !== activity.path)
     .slice(0, 6);
+  const colors = categoryColors[activity.category];
 
   return (
     <>
@@ -52,6 +54,7 @@ export default async function ActivityPage({
       <main className="flex-1">
         <PageHero
           eyebrow={categoryLabels[activity.category]}
+          eyebrowClassName={colors.badge}
           title={activity.title}
           description={activity.blurb}
           image={activity.heroImage}
@@ -68,8 +71,8 @@ export default async function ActivityPage({
 
           {activity.note && (
             <Reveal delay={0.08}>
-              <div className="mt-8 flex items-start gap-3 rounded-2xl border border-border bg-secondary/50 p-5">
-                <Info className="mt-0.5 size-5 shrink-0 text-primary" />
+              <div className={cn("mt-8 flex items-start gap-3 rounded-2xl border p-5", colors.border, colors.bg)}>
+                <Info className={cn("mt-0.5 size-5 shrink-0", colors.text)} />
                 <p className="text-sm text-muted-foreground">{activity.note}</p>
               </div>
             </Reveal>
@@ -82,7 +85,7 @@ export default async function ActivityPage({
                   key={h}
                   className="flex items-start gap-2.5 rounded-xl border border-border bg-card p-4"
                 >
-                  <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <CheckCircle2 className={cn("mt-0.5 size-4 shrink-0", colors.text)} />
                   <span className="text-sm font-medium">{h}</span>
                 </RevealItem>
               ))}
@@ -93,7 +96,7 @@ export default async function ActivityPage({
         {activity.guides && activity.guides.length > 0 && (
           <section className="container-px mx-auto max-w-6xl pb-16">
             <Reveal className="max-w-2xl">
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
+              <span className={cn("text-xs font-medium uppercase tracking-[0.2em]", colors.text)}>
                 Meet Our Guides
               </span>
               <h2 className="mt-3 text-balance text-3xl font-bold sm:text-4xl">
@@ -111,22 +114,22 @@ export default async function ActivityPage({
                   <div className="mt-2 grid grid-cols-2 gap-2 text-xs text-muted-foreground">
                     {g.years && (
                       <span className="flex items-center gap-1.5">
-                        <Award className="size-3.5 text-primary" /> {g.years} years riding
+                        <Award className={cn("size-3.5", colors.text)} /> {g.years} years riding
                       </span>
                     )}
                     {g.level && (
                       <span className="flex items-center gap-1.5">
-                        <Mountain className="size-3.5 text-primary" /> {g.level}
+                        <Mountain className={cn("size-3.5", colors.text)} /> {g.level}
                       </span>
                     )}
                     {g.trail && (
                       <span className="col-span-2 flex items-center gap-1.5">
-                        <Route className="size-3.5 text-primary" /> Favorite: {g.trail}
+                        <Route className={cn("size-3.5", colors.text)} /> Favorite: {g.trail}
                       </span>
                     )}
                   </div>
                   {g.described && (
-                    <span className="mt-1 text-xs font-medium uppercase tracking-wide text-primary">
+                    <span className={cn("mt-1 text-xs font-medium uppercase tracking-wide", colors.text)}>
                       Described as: {g.described}
                     </span>
                   )}
@@ -148,7 +151,8 @@ export default async function ActivityPage({
 
         {related.length > 0 && (
           <section className="container-px mx-auto max-w-7xl py-16">
-            <Reveal>
+            <Reveal className="flex items-center gap-3">
+              <span className={cn("size-2.5 rounded-full", colors.solid)} aria-hidden />
               <h2 className="text-3xl font-bold sm:text-4xl">
                 More {categoryLabels[activity.category]}
               </h2>
@@ -162,6 +166,7 @@ export default async function ActivityPage({
                     src={r.heroImage}
                     alt={r.navLabel}
                     eyebrow={categoryLabels[r.category]}
+                    eyebrowClassName={categoryColors[r.category].text}
                     title={r.navLabel}
                     description={r.blurb}
                   />

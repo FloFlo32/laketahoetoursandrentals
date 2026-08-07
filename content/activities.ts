@@ -393,6 +393,57 @@ export const categoryLabels: Record<Activity["category"], string> = {
   Services: "Services",
 };
 
+/**
+ * Category accent colors, pulled from the logo itself: the lake (blue), the
+ * pines (green), the snowcap (icy cyan), plus one warm accent for tours so
+ * the palette isn't entirely cool. Primary teal stays reserved for actions.
+ */
+export const categoryColors: Record<
+  Activity["category"],
+  { text: string; bg: string; ring: string; solid: string; border: string; badge: string }
+> = {
+  Water: {
+    text: "text-blue-600",
+    bg: "bg-blue-500/10",
+    ring: "ring-blue-500/15",
+    solid: "bg-blue-500",
+    border: "border-blue-500/20",
+    badge: "border-blue-500/20 bg-blue-500/10 text-blue-600",
+  },
+  Land: {
+    text: "text-emerald-600",
+    bg: "bg-emerald-500/10",
+    ring: "ring-emerald-500/15",
+    solid: "bg-emerald-500",
+    border: "border-emerald-500/20",
+    badge: "border-emerald-500/20 bg-emerald-500/10 text-emerald-600",
+  },
+  Winter: {
+    text: "text-cyan-600",
+    bg: "bg-cyan-500/10",
+    ring: "ring-cyan-500/15",
+    solid: "bg-cyan-500",
+    border: "border-cyan-500/20",
+    badge: "border-cyan-500/20 bg-cyan-500/10 text-cyan-600",
+  },
+  Tours: {
+    text: "text-amber-600",
+    bg: "bg-amber-500/10",
+    ring: "ring-amber-500/15",
+    solid: "bg-amber-500",
+    border: "border-amber-500/20",
+    badge: "border-amber-500/20 bg-amber-500/10 text-amber-600",
+  },
+  Services: {
+    text: "text-primary",
+    bg: "bg-primary/10",
+    ring: "ring-primary/15",
+    solid: "bg-primary",
+    border: "border-primary/20",
+    badge: "border-primary/20 bg-primary/5 text-primary",
+  },
+};
+
 /** Grouped for the mega-menu + footer, in scrape order within each group. */
 export const navGroups = activityCategories.map((category) => ({
   category,

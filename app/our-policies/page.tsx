@@ -19,21 +19,25 @@ const policies = [
     icon: CalendarClock,
     title: "Booking & Cancellation",
     body: "Tours and rentals are booked in advance for specific dates and group sizes. Contact us directly for our current booking and cancellation terms before you reserve.",
+    color: "text-amber-600 bg-amber-500/10 ring-amber-500/15",
   },
   {
     icon: CloudRain,
     title: "Weather & Conditions",
     body: "Lake Tahoe weather can change quickly, especially at elevation. Some tours may be rescheduled for safety in high wind, storms, or unsafe trail/water conditions.",
+    color: "text-cyan-600 bg-cyan-500/10 ring-cyan-500/15",
   },
   {
     icon: ShieldCheck,
     title: "Safety & Waivers",
     body: "All guided tours (kayaking, biking, hiking, fishing, diving and winter sports) require a signed waiver and a safety briefing with your guide before departure.",
+    color: "text-emerald-600 bg-emerald-500/10 ring-emerald-500/15",
   },
   {
     icon: Bike,
     title: "Rentals & Equipment",
     body: "Kayak, paddle board, bike, ski and snowboard rentals include the gear listed on that activity's page. Universal roof racks are included with kayak and SUP rentals at no extra cost.",
+    color: "text-blue-600 bg-blue-500/10 ring-blue-500/15",
   },
 ];
 
@@ -58,7 +62,7 @@ export default function OurPoliciesPage() {
                 key={p.title}
                 className="flex flex-col gap-3 rounded-2xl border border-border bg-card p-6"
               >
-                <span className="grid size-11 place-items-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/15">
+                <span className={`grid size-11 place-items-center rounded-xl ring-1 ${p.color}`}>
                   <p.icon className="size-5" />
                 </span>
                 <h3 className="text-lg font-semibold">{p.title}</h3>

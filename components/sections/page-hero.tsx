@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 /**
  * Shared hero for every inner page: real photo on top (own area, own image
@@ -10,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
  */
 export function PageHero({
   eyebrow,
+  eyebrowClassName,
   title,
   description,
   image,
@@ -17,6 +19,7 @@ export function PageHero({
   cta,
 }: {
   eyebrow?: string;
+  eyebrowClassName?: string;
   title: string;
   description?: string;
   image: string;
@@ -41,7 +44,7 @@ export function PageHero({
 
       <div className="relative z-10 mx-auto -mt-10 max-w-4xl rounded-3xl border border-border bg-card p-6 text-center shadow-xl shadow-primary/5 sm:-mt-16 sm:p-10">
         {eyebrow && (
-          <Badge variant="accent" className="mx-auto mb-4">
+          <Badge variant="accent" className={cn("mx-auto mb-4", eyebrowClassName)}>
             {eyebrow}
           </Badge>
         )}

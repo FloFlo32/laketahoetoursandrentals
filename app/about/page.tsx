@@ -19,21 +19,25 @@ const pillars = [
     icon: Waves,
     title: "Both shores of the lake",
     body: "Tours and rentals on the California and Nevada sides of Lake Tahoe, from Sand Harbor to Cave Rock.",
+    color: "text-blue-600 bg-blue-500/10 ring-blue-500/15",
   },
   {
     icon: Mountain,
     title: "Local guides, real adventures",
     body: "Every tour is led by a local guide, not a script, including Adventure Guide Brian on the water.",
+    color: "text-emerald-600 bg-emerald-500/10 ring-emerald-500/15",
   },
   {
     icon: Award,
     title: "TripAdvisor Certificate of Excellence",
     body: "Recognized by travelers for guided kayaking, hiking, biking, fishing, diving and winter tours.",
+    color: "text-amber-600 bg-amber-500/10 ring-amber-500/15",
   },
   {
     icon: Users,
     title: "Proud partners",
     body: "We work alongside SkiByk, the American SkiBike Association and Golden Gate Rides.",
+    color: "text-primary bg-primary/10 ring-primary/15",
   },
 ];
 
@@ -89,7 +93,7 @@ export default function AboutPage() {
                 key={p.title}
                 className="flex flex-col gap-3 rounded-2xl border border-border bg-card p-6"
               >
-                <span className="grid size-11 place-items-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/15">
+                <span className={`grid size-11 place-items-center rounded-xl ring-1 ${p.color}`}>
                   <p.icon className="size-5" />
                 </span>
                 <h3 className="text-lg font-semibold">{p.title}</h3>
