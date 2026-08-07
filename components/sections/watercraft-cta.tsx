@@ -1,31 +1,39 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/magic/reveal";
 
 const IMG = "/ingested/laketahoetoursandrentals";
 
+const features = [
+  "Universal roof racks included, no extra cost",
+  "Delivery available, paddle wherever you want",
+  "Easy-mount setup so you're on the water in minutes",
+];
+
 /**
  * "Enjoy Tahoe On Your Own Personal Watercraft" — the closing banner the
  * source site repeats at the bottom of the homepage AND every inner page.
- * Mirrored here as one shared component.
+ * Mirrored here as one shared component. Both columns share a fixed
+ * min-height so the photo never dwarfs a short block of copy.
  */
 export function WatercraftCta() {
   return (
     <section className="container-px mx-auto max-w-7xl py-16">
       <Reveal>
-        <div className="grid items-center gap-8 overflow-hidden rounded-3xl border border-border bg-card md:grid-cols-2">
-          <div className="relative aspect-[4/3] md:aspect-auto md:h-full md:min-h-[18rem]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+        <div className="grid overflow-hidden rounded-3xl border border-border bg-card md:grid-cols-2">
+          <div className="relative min-h-[18rem] md:min-h-[26rem]">
+            <Image
               src={`${IMG}/img-018.webp`}
               alt="Guest with a rental bike overlooking Lake Tahoe"
-              loading="lazy"
-              decoding="async"
-              className="size-full object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={75}
+              className="object-cover"
             />
           </div>
-          <div className="p-8 sm:p-10">
+          <div className="flex min-h-[18rem] flex-col justify-center p-8 md:min-h-[26rem] sm:p-10">
             <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary">
               Grab-N-Go Rentals
             </span>
@@ -33,10 +41,20 @@ export function WatercraftCta() {
               Enjoy Tahoe On Your Own Personal Watercraft
             </h2>
             <p className="mt-4 text-pretty text-muted-foreground">
-              Kayak and paddle board rentals with easy-mount universal roof racks
-              included, no extra cost. Paddle where you want, delivery also available.
+              Kayak and paddle board rentals built for spontaneous plans. Grab your
+              gear and go, no reservation gymnastics required.
             </p>
-            <Button asChild size="lg" className="mt-6">
+            <ul className="mt-6 flex flex-col gap-3">
+              {features.map((f) => (
+                <li key={f} className="flex items-start gap-2.5 text-sm">
+                  <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
+                    <Check className="size-3.5" />
+                  </span>
+                  <span className="text-pretty text-foreground/90">{f}</span>
+                </li>
+              ))}
+            </ul>
+            <Button asChild size="lg" className="mt-7 w-fit">
               <Link href="/kayak-/-sup">
                 See Rentals <ArrowRight className="size-4" />
               </Link>
