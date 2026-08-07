@@ -1,5 +1,4 @@
-import { Reveal } from "@/components/magic/reveal";
-import { Marquee } from "@/components/magic/marquee";
+import { Reveal, RevealGroup, RevealItem } from "@/components/magic/reveal";
 import { partners } from "@/content/activities";
 
 export function Partners() {
@@ -11,21 +10,24 @@ export function Partners() {
             Proud Partners
           </span>
         </Reveal>
-      </div>
-      <div className="mt-8">
-        <Marquee pauseOnHover className="[--marquee-duration:28s]">
+
+        <RevealGroup className="mt-8 flex flex-wrap items-center justify-center gap-4">
           {partners.map((p) => (
-            /* eslint-disable-next-line @next/next/no-img-element */
-            <img
+            <RevealItem
               key={p.name}
-              src={p.src}
-              alt={p.name}
-              loading="lazy"
-              decoding="async"
-              className="h-14 w-auto shrink-0 opacity-80 grayscale transition-all hover:opacity-100 hover:grayscale-0"
-            />
+              className="grid h-20 w-40 place-items-center rounded-xl border border-border bg-card px-5 shadow-sm transition-shadow hover:shadow-md"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={p.src}
+                alt={p.name}
+                loading="lazy"
+                decoding="async"
+                className="max-h-12 w-auto max-w-full object-contain"
+              />
+            </RevealItem>
           ))}
-        </Marquee>
+        </RevealGroup>
       </div>
     </section>
   );

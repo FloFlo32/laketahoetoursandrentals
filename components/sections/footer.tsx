@@ -82,8 +82,10 @@ export function Footer() {
             Proud partners
           </span>
           {partners.map((p) => (
-            /* eslint-disable-next-line @next/next/no-img-element */
-            <img key={p.name} src={p.src} alt={p.name} loading="lazy" decoding="async" className="h-8 w-auto opacity-80 grayscale transition-all hover:opacity-100 hover:grayscale-0" />
+            <span key={p.name} className="grid h-10 place-items-center rounded-md border border-border bg-card px-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={p.src} alt={p.name} loading="lazy" decoding="async" className="h-6 w-auto object-contain" />
+            </span>
           ))}
         </div>
       </div>
