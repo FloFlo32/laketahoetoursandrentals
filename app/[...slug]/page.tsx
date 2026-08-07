@@ -1,7 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { CheckCircle2, Info, Award, Mountain, Route, ArrowRight, MapPin } from "lucide-react";
+import {
+  CheckCircle2,
+  Info,
+  Award,
+  Mountain,
+  Route,
+  ArrowRight,
+  MapPin,
+  Waves,
+  Snowflake,
+  Compass,
+  Wrench,
+} from "lucide-react";
 import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
 import { PageHero } from "@/components/sections/page-hero";
@@ -21,6 +33,14 @@ export function generateStaticParams() {
 function findActivity(slugParts: string[]) {
   return activityByPath.get(slugParts.join("/"));
 }
+
+const categoryIcons = {
+  Water: Waves,
+  Land: Mountain,
+  Winter: Snowflake,
+  Tours: Compass,
+  Services: Wrench,
+} as const;
 
 export async function generateMetadata({
   params,
@@ -49,6 +69,7 @@ export default async function ActivityPage({
     .filter((a) => a.category === activity.category && a.path !== activity.path)
     .slice(0, 6);
   const colors = categoryColors[activity.category];
+  const CategoryIcon = categoryIcons[activity.category];
 
   return (
     <>
@@ -65,52 +86,62 @@ export default async function ActivityPage({
         />
 
         <section className="container-px mx-auto max-w-6xl py-16">
-          <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr]">
-            <div className="flex h-full flex-col justify-center">
-              <Reveal className="relative pl-6">
-                <span
-                  className={cn("absolute inset-y-1 left-0 w-1 rounded-full", colors.solid)}
-                  aria-hidden
-                />
-                <div className="space-y-5 text-pretty text-lg leading-relaxed text-muted-foreground">
-                  {activity.description.map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
-                </div>
-              </Reveal>
+          <div className="grid gap-6 lg:grid-cols-2">
+            {/* Card 1 — white, the story */}
+            <Reveal className="flex h-full flex-col rounded-2xl border border-border bg-card p-7 sm:p-8">
+              <span className={cn("grid size-12 place-items-center rounded-xl ring-1", colors.bg, colors.ring)}>
+                <CategoryIcon className={cn("size-6", colors.text)} />
+              </span>
+              <h3 className="mt-5 text-2xl font-bold">{activity.navLabel}</h3>
+              <div className="mt-3 space-y-4 text-pretty leading-relaxed text-muted-foreground">
+                {activity.description.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
 
               {activity.note && (
-                <Reveal delay={0.08}>
-                  <div className={cn("mt-8 flex items-start gap-3 rounded-2xl border p-5", colors.border, colors.bg)}>
-                    <Info className={cn("mt-0.5 size-5 shrink-0", colors.text)} />
-                    <p className="text-sm text-muted-foreground">{activity.note}</p>
-                  </div>
-                </Reveal>
+                <div className={cn("mt-6 flex items-start gap-3 rounded-xl border p-4", colors.border, colors.bg)}>
+                  <Info className={cn("mt-0.5 size-4 shrink-0", colors.text)} />
+                  <p className="text-sm text-muted-foreground">{activity.note}</p>
+                </div>
               )}
-            </div>
 
-            <Reveal delay={0.1}>
-              <div className={cn("rounded-2xl border p-6", colors.border, colors.bg)}>
-                <span className={cn("inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em]", colors.text)}>
-                  <span className={cn("size-2 rounded-full", colors.solid)} aria-hidden />
-                  {categoryLabels[activity.category]}
-                </span>
-                <h3 className="mt-3 text-lg font-semibold">Quick Facts</h3>
+              <div className="mt-auto pt-6">
+                <Button asChild variant="outline" size="lg" className="w-fit">
+                  <Link href="/location">
+                    <MapPin className="size-4" /> View Location
+                  </Link>
+                </Button>
+              </div>
+            </Reveal>
 
-                <ul className="mt-4 flex flex-col gap-3">
-                  {activity.highlights?.map((h) => (
-                    <li key={h} className="flex items-start gap-2.5 text-sm">
-                      <CheckCircle2 className={cn("mt-0.5 size-4 shrink-0", colors.text)} />
-                      <span className="font-medium text-foreground/90">{h}</span>
-                    </li>
-                  ))}
-                  <li className="flex items-start gap-2.5 text-sm">
-                    <MapPin className={cn("mt-0.5 size-4 shrink-0", colors.text)} />
-                    <span className="font-medium text-foreground/90">Stateline, Nevada · South Lake Tahoe</span>
+            {/* Card 2 — category color, the quick facts */}
+            <Reveal delay={0.1} className={cn("flex h-full flex-col rounded-2xl border p-7 sm:p-8", colors.border, colors.bg)}>
+              <span className={cn("inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.15em]", colors.text)}>
+                <span className={cn("size-2 rounded-full", colors.solid)} aria-hidden />
+                {categoryLabels[activity.category]}
+              </span>
+              <h3 className="mt-3 text-2xl font-bold">Quick Facts</h3>
+
+              <ul className="mt-5 flex flex-col gap-3.5">
+                {activity.highlights?.map((h) => (
+                  <li key={h} className="flex items-start gap-2.5 text-sm">
+                    <CheckCircle2 className={cn("mt-0.5 size-4 shrink-0", colors.text)} />
+                    <span className="font-medium text-foreground/90">{h}</span>
                   </li>
-                </ul>
+                ))}
+                <li className="flex items-start gap-2.5 text-sm">
+                  <MapPin className={cn("mt-0.5 size-4 shrink-0", colors.text)} />
+                  <span className="font-medium text-foreground/90">Stateline, Nevada · South Lake Tahoe</span>
+                </li>
+                <li className="flex items-start gap-2.5 text-sm">
+                  <Award className={cn("mt-0.5 size-4 shrink-0", colors.text)} />
+                  <span className="font-medium text-foreground/90">TripAdvisor Certificate of Excellence</span>
+                </li>
+              </ul>
 
-                <Button asChild size="lg" className="mt-6 w-full">
+              <div className="mt-auto pt-6">
+                <Button asChild size="lg" className="w-full">
                   <Link href="/contact">
                     Check Availability <ArrowRight className="size-4" />
                   </Link>
