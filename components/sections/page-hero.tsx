@@ -56,7 +56,9 @@ export function PageHero({
             {eyebrow}
           </Badge>
         )}
-        <h1 className="text-balance text-4xl font-bold leading-[1.05] sm:text-5xl">{title}</h1>
+        <h1 className="text-gradient-hero text-balance text-4xl font-bold leading-[1.05] sm:text-5xl">
+          {title}
+        </h1>
         {description && (
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-background/85 sm:text-lg">
             {description}

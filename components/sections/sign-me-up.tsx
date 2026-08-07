@@ -34,7 +34,7 @@ export function SignMeUp() {
             <span className="rounded-full border border-background/30 bg-background/10 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.2em] backdrop-blur-sm">
               Sign Me Up :)
             </span>
-            <h2 className="mx-auto mt-5 max-w-2xl text-balance text-4xl font-bold sm:text-5xl">
+            <h2 className="text-gradient-hero mx-auto mt-5 max-w-2xl text-balance text-4xl font-bold sm:text-5xl">
               Ready for real adventure on Lake Tahoe?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-background/85">

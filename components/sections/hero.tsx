@@ -41,7 +41,7 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <h1 className="mx-auto mt-3 text-balance text-6xl font-bold leading-[0.98] sm:text-7xl">
+          <h1 className="text-gradient-hero mx-auto mt-3 text-balance text-6xl font-bold leading-[0.98] sm:text-7xl">
             Tahoe Tours and Rentals
           </h1>
         </Reveal>

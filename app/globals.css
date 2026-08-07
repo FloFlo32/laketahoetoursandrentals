@@ -201,6 +201,19 @@
   color: transparent;
 }
 
+/* Same idea, light-to-brand — for hero headlines sitting on a dark photo scrim. */
+@utility text-gradient-hero {
+  background: linear-gradient(
+    100deg,
+    var(--color-background) 0%,
+    var(--color-aurora-2) 55%,
+    var(--color-primary) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Brand gradient fill — for buttons, borders, panels. */
 @utility bg-brand-gradient {
   background-image: linear-gradient(
